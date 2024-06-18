@@ -43,3 +43,23 @@ function getWeatherData() {
 }
 
 getWeatherData()
+
+<div class="input-container">
+  <form>
+    <input type="text" class="zipcode" placeholder="type zipcode here">
+    <button type="button" class="search-button">Search</button>
+  </form>
+</div>
+let input = document.querySelector(".zipcode");
+let ZIP_CODE = input.value;
+
+const getZipCode = (e) => {
+  e.preventDefault();
+  let ZIP_CODE = input.value;
+  getWeatherData(ZIP_CODE);
+};
+
+function getWeatherData(zip) {
+  ...
+}
+const API_ENDPOINT = `http://api.openweathermap.org/data/2.5/weather?zip=${ZIP_CODE}&APPID=${API_KEY}`
