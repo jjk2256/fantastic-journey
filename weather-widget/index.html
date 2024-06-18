@@ -63,3 +63,18 @@ function getWeatherData(zip) {
   ...
 }
 const API_ENDPOINT = `http://api.openweathermap.org/data/2.5/weather?zip=${ZIP_CODE}&APPID=${API_KEY}`
+
+<div class="container">
+  <div class="input-container">
+    <form>
+      <input type="text" class="zipcode" placeholder="type zipcode here">
+      <button type="button" class="search-button">Search</button>
+    </form>
+  </div>
+  <div class="output-container">
+    <h2 class="city_name"></h2>
+    <p class="temperature"></p>
+  </div>
+</div>
+
+<img src="" alt="">
