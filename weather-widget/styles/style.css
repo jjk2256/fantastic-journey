@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    margin: 1;
+    padding: 1;
   }
   
     html,
@@ -45,7 +45,7 @@
   
   .output_component{
     position: absolute;
-    top: 60%;
+    top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
