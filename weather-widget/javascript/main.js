@@ -1,6 +1,6 @@
 const API_KEY = config.WEATHER_API_KEY;
 // access elements in the DOM
-let input = document.querySelector(".zipcode");
+let input = document.querySelector(".zip_code");
 let btn = document.querySelector(".search-button");
 let form = document.querySelector("form");
 
@@ -13,7 +13,7 @@ let image = document.querySelector("img");
   // store your open weather API Key
   const API_KEY = "[API_KEY]";
   // store the API endpoint and API key
-  const API_ENDPOINT = `https://api.openweathermap.org/data/2.5/weather?zip=${zip}&APPID=${API_KEY}`;
+  const API_ENDPOINT = `https://api.openweathermap.org/data/2.5/weather?zip={zip_code},{country_code}&appid={API_KEY}`;
 
   fetch(API_ENDPOINT)
     .then(response => response.json())
