@@ -13,9 +13,6 @@ let image = document.querySelector("img");
   const API_KEY = "[YOUR API KEY HERE]";
   // store the API endpoint and API key
   const API_ENDPOINT = `https://api.openweathermap.org/data/2.5/weather?zip=${zip}&APPID=${API_KEY}`;
-  // reset
-  form.reset();
-  input.focus();
 
   fetch(API_ENDPOINT)
     .then(response => response.json())
