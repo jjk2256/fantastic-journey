@@ -1,4 +1,3 @@
-const API_KEY = config.WEATHER_API_KEY;
 // access elements in the DOM
 let input = document.querySelector(".zip_code");
 let btn = document.querySelector(".search-button");
