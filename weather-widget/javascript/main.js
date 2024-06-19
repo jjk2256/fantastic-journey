@@ -6,8 +6,6 @@ let form = document.querySelector("form");
 let CITY_NAME = document.querySelector(".city_name");
 let CITY_TEMP = document.querySelector(".temperature");
 
-let image = document.querySelector("img");
-
 // write a function to get weather data
   const getWeatherData = (zip) => {
   // store your open weather API Key
@@ -28,9 +26,6 @@ let image = document.querySelector("img");
       );
       // manipulate the temperature content
       CITY_TEMP.textContent = weather_in_celsius + " C"
-      // tag attributes to a variable
-      let WEATHER_ICON = local_weather_data.weather[0].icon
-      image.setAttribute('src', `https://openweathermap.org/img/wn/${WEATHER_ICON}@2x.png`)
   });
 }
 
@@ -43,3 +38,15 @@ const getZipcode = e => {
 }
 
 btn.addEventListener('click', getZipcode);
+
+let image = document.querySelector("img");
+
+const getWeatherData = (zip) => {
+  fetch(API_ENDPOINT)
+    .then(response => response.json())
+    .then(data => {
+      let WEATHER_ICON = local_weather_data.weather[0].icon
+      
+      image.setAttribute('src', `https://openweathermap.org/img/wn/${WEATHER_ICON}@2x.png`)
+  }
+}
