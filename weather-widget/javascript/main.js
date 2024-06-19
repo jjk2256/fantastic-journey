@@ -13,6 +13,9 @@ let image = document.querySelector("img");
   const API_KEY = "[YOUR API KEY HERE]";
   // store the API endpoint and API key
   const API_ENDPOINT = `https://api.openweathermap.org/data/2.5/weather?zip=${zip}&APPID=${API_KEY}`;
+  // reset
+  form.reset();
+  input.focus();
 
   fetch(API_ENDPOINT)
     .then(response => response.json())
@@ -20,7 +23,6 @@ let image = document.querySelector("img");
       // store the requested data in a variable
       let local_weather_data = data;
       // manipulate the city name content
-      let WEATHER_ICON = local_weather_data.weather[0].icon
       CITY_NAME.textContent = local_weather_data.name;
       // process the temperature data before manipulating the content
       let weather_in_celsius = Math.round(
@@ -28,10 +30,11 @@ let image = document.querySelector("img");
       );
       // manipulate the temperature content
       CITY_TEMP.textContent = weather_in_celsius + " C"
-  });
-  let WEATHER_ICON = local_weather_data.weather[0].icon
+      //manipulate the weather icon
+      let WEATHER_ICON = local_weather_data.weather[0].icon
       
-  image.setAttribute('src', `https://openweathermap.org/img/wn/${WEATHER_ICON}@2x.png`)
+      image.setAttribute('src', `https://openweathermap.org/img/wn/${WEATHER_ICON}@2x.png`)
+  });
 }
 
 const getZipcode = e => {
