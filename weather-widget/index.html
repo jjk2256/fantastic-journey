@@ -1,20 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="styles/style.css">
-</head>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Document</title>
-</head>
-<body>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
   <div class="container">
@@ -25,56 +12,9 @@
       </form>
     </div>
     <div class="output-container">
-      <h2 class="city_name"></h2>
-      <p class="temperature"></p>
+      <h2 class="city_name">New York</h2>
+      <p class="temperature">34</p>
     </div>
-  </div>  
+  </div>
 </body>
 </html>
-<body>
-  ...
-
-  <script src="config.js"></script>  
-  <script src="javascript/main.js"></script>
-</body>
-
-function getWeatherData() {
-  // fetch request goes in here :-)
-}
-
-getWeatherData()
-
-<div class="input-container">
-  <form>
-    <input type="text" class="zipcode" placeholder="type zipcode here">
-    <button type="button" class="search-button">Search</button>
-  </form>
-</div>
-let input = document.querySelector(".zipcode");
-let ZIP_CODE = input.value;
-
-const getZipCode = (e) => {
-  e.preventDefault();
-  let ZIP_CODE = input.value;
-  getWeatherData(ZIP_CODE);
-};
-
-function getWeatherData(zip) {
-  ...
-}
-const API_ENDPOINT = `http://api.openweathermap.org/data/2.5/weather?zip=${ZIP_CODE}&APPID=${API_KEY}`
-
-<div class="container">
-  <div class="input-container">
-    <form>
-      <input type="text" class="zipcode" placeholder="type zipcode here">
-      <button type="button" class="search-button">Search</button>
-    </form>
-  </div>
-  <div class="output-container">
-    <h2 class="city_name"></h2>
-    <p class="temperature"></p>
-  </div>
-</div>
-
-<img src="" alt="">

@@ -6,7 +6,6 @@ const API_KEY = config.WEATHER_API_KEY;
   <script src="config.js"></script>  
   <script src="javascript/main.js"></script>
 </body>
-console.log("Hello, World!");
 // using concatenation
 "https://api.openweathermap.org/data/2.5/weather?zip=" + zipcode
 fetch(`http://api.openweathermap.org/data/2.5/weather?zip=10128&APPID=${WEATHER_API_KEY}`)
@@ -86,4 +85,3 @@ const getWeatherData = (zip) => {
       
       image.setAttribute('src', `https://openweathermap.org/img/wn/${WEATHER_ICON}@2x.png`)
   }
-}
