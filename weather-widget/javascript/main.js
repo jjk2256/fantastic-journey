@@ -10,7 +10,7 @@ let image = document.querySelector("img");
 // write a function to get weather data
   const getWeatherData = (zip) => {
   // store your open weather API Key
-  const API_KEY = "[1d3af814e0c344bc1b4d8973771e6c37]";
+  const API_KEY = "1d3af814e0c344bc1b4d8973771e6c37";
   // store the API endpoint and API key
   const API_ENDPOINT = `https://api.openweathermap.org/data/2.5/weather?zip=${zip}&APPID=${API_KEY}`;
 
