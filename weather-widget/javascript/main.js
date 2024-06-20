@@ -8,21 +8,21 @@ let CITY_TEMP = document.querySelector(".temperature");
 let image = document.querySelector("img");
 
 // write a function to get weather data
-  const getWeatherData = (zip) => {
+  const getWeatherData = (getZipcode) => {
   // store your open weather API Key
-  const API_KEY = "1d3af814e0c344bc1b4d8973771e6c37";
+  const API_KEY = "[1d3af814e0c344bc1b4d8973771e6c37]";
   // store the API endpoint and API key
-  const API_ENDPOINT = `https://api.openweathermap.org/data/2.5/weather?zip=${zip}&APPID=${API_KEY}`;
+  const API_ENDPOINT = `https://api.openweathermap.org/data/2.5/weather?zip=${getZipcode}&APPID=${API_KEY}`;
 
   fetch(API_ENDPOINT)
     .then(response => response.json())
     .then(data => {
+      let WEATHER_ICON = local_weather_data.weather[0].icon
+      image.setAttribute('src', `https://openweathermap.org/img/wn/${WEATHER_ICON}@2x.png`)
       // store the requested data in a variable
       let local_weather_data = data;
       // manipulate the city name content
       CITY_NAME.textContent = local_weather_data.name;
-      let WEATHER_ICON = local_weather_data.weather[0].icon
-      image.setAttribute('src', `https://openweathermap.org/img/wn/${WEATHER_ICON}@2x.png`)
       // process the temperature data before manipulating the content
       let weather_in_celsius = Math.round(
         local_weather_data.main.temp - 273
