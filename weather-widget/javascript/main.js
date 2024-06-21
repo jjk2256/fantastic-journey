@@ -19,6 +19,7 @@ let image = document.querySelector("img");
     .then(data => {
       // store the requested data in a variable
       let local_weather_data = data;
+      console.log(local_weather_data)
       // manipulate the city name content
       CITY_NAME.textContent = local_weather_data.name;
       // process the temperature data before manipulating the content
@@ -30,14 +31,14 @@ let image = document.querySelector("img");
       let WEATHER_ICON = local_weather_data.weather[0].icon
       image.setAttribute('src', `https://openweathermap.org/img/wn/${WEATHER_ICON}@2x.png`)
   });
+  form.reset();
+  input.focus();
 }
 
 const getZipcode = e => {
   e.preventDefault();
   let ZIP_CODE = input.value;
   getWeatherData(ZIP_CODE);
-  form.reset();
-  input.focus();
 }
 
 btn.addEventListener('click', getZipcode);
