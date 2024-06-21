@@ -2,15 +2,14 @@
 let input = document.querySelector(".zipcode");
 let btn = document.querySelector(".search-button");
 let form = document.querySelector("form");
-
+const API_KEY = config.WEATHER_API_KEY;
 let CITY_NAME = document.querySelector(".city_name");
 let CITY_TEMP = document.querySelector(".temperature");
 let image = document.querySelector("img");
 
 // write a function to get weather data
   const getWeatherData = (zip) => {
-  // store your open weather API Key
-  const API_KEY = config.WEATHER_API_KEY;
+  // store your open weather API Key 
   // store the API endpoint and API key
   const API_ENDPOINT = `https://api.openweathermap.org/data/2.5/weather?zip=${zip}&APPID=${API_KEY}`;
 
