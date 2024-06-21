@@ -17,8 +17,6 @@ let image = document.querySelector("img");
   fetch(API_ENDPOINT)
     .then(response => response.json())
     .then(data => {
-      let WEATHER_ICON = local_weather_data.weather[0].icon
-      image.setAttribute('src', `https://openweathermap.org/img/wn/${WEATHER_ICON}@2x.png`)
       // store the requested data in a variable
       let local_weather_data = data;
       // manipulate the city name content
@@ -29,6 +27,8 @@ let image = document.querySelector("img");
       );
       // manipulate the temperature content
       CITY_TEMP.textContent = weather_in_celsius + " C"
+      let WEATHER_ICON = local_weather_data.weather[0].icon
+      image.setAttribute('src', `https://openweathermap.org/img/wn/${WEATHER_ICON}@2x.png`)
   });
 }
 
